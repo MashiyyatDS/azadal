@@ -11,13 +11,13 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/datatables.min.css">
-    <script type="text/javascript" src="/js/jquery-3.2.1.min.css"></script>
-    <script type="text/javascript" src="/js/materialize.min.css"></script>
-    <script type="text/javascript" src="/js/tinymce.min.css"></script>
-    <script type="text/javascript" src="/js/sweetalert.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}">
+    <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/tinymce.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sweetalert.min.js') }}"></script>
 </head>
 <body>
     <div id="app">

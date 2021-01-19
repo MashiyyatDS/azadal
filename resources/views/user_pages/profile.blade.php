@@ -85,6 +85,6 @@
 	    </div>
   	</form>
   </div>
-  <link rel="stylesheet" type="text/css" href="/css/user.css">
-  <script type="text/javascript" src="/js/user.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}">
+  <script type="text/javascript" src="{{ asset('js/user.js') }}"></script>
 @endsection
