@@ -1,0 +1,86 @@
+.profile-photo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	border-radius: 20px;
+}
+.profile-row {
+  height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.options-btn {
+	width: 100%!important;
+	height: 70px!important;
+	margin-top:5px;
+}
+.greet {
+	font-size: 40px;
+	margin: 0px;
+}
+
+@media (max-width: 382px) {
+	.greet {
+		font-size: 15px;
+	} 	
+	.modal.open{
+    width: 100%!important;
+    max-height: 100%!important;
+    height: 100%!important;
+    top: 0!important;
+  }
+  .modal-content {
+    height: calc(80% - 56px);
+  }
+}
+
+@media (min-width: 383px) and (max-width: 575px){ 
+	.greet {
+		font-size: 20px;
+	} 
+	.modal.open{
+    width: 100%!important;
+    max-height: 100%!important;
+    height: 100%!important;
+    top: 0!important;
+  }
+  .modal-content {
+    height: calc(80% - 56px);
+  }
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {  
+	.greet {
+		font-size: 25px;
+	} 
+	.modal.open{
+    width: 100%!important;
+    max-height: 100%!important;
+    height: 100%!important;
+    top: 0!important;
+  }
+  .modal-content {
+    height: calc(100% - 56px);
+  }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+	.greet {
+		font-size: 30px;
+	} 
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {  
+	.greet {
+		font-size: 35px;
+	} 
+}
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  
+	/* Max */
+}

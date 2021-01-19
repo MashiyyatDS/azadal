@@ -1,0 +1,156 @@
+<form id="product-form" class="container">
+    {{ csrf_field() }}
+    <div class="row">
+      <div class="col s4 input-field">
+        <label>Product Name</label>
+        <input type="text" name="name" id="product-name">
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Type</label>
+        <input type="text" name="type" id="product-type">
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Description</label>
+        <input type="text" name="description" id="product-description">
+      </div>
+      <div class="chips category-chips"></div> 
+      <div class="chips tag-chips"></div>  
+      <div class="col s4 input-field">
+        <label>Product Quantity</label>
+        <input type="number" name="quantity" id="product-quantity">
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Original Price</label>
+        <input type="number" name="original_price" id="original-price">
+      </div>
+      <div class="col s4 input-field">
+        <label>Product SRP</label>
+        <input type="number" name="srp" id="product-srp">
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Delivery Fee</label>
+        <input type="number" name="delivery_fee" id="delivery-fee">  
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Warranty</label>
+        <input type="number" name="warranty" id="product-warranty"> 
+      </div>
+      <div class="col s4 input-field">
+        <label>Product Discount</label>
+        <input type="number" name="discount" id="product-discount">
+      </div>
+    </div>
+    <button class="btn-flat green white-text">Submit</button>
+  </form>
+
+  <script>
+    $(document).ready(function() {
+
+        $('.tag-chips').material_chip({
+          placeholder: 'Product tags',
+          secondaryPlaceholder: 'Enter tag',
+        }); 
+        $('.category-chips').material_chip({
+          placeholder: 'Product category',
+          secondaryPlaceholder: 'Enter category',
+        }); 
+
+      $('#product-form').on('submit', function(e) {
+        e.preventDefault();
+        $.post('http://localhost:8000/product/create', {
+          'name':$('#product-name').val(),
+          'type':$('#product-type').val(),
+          'description':$('#product-description').val(),
+          'original_price':$('#original-price').val(),
+          'quantity':$('#product-quantity').val(),
+          'srp':$('#product-srp').val(),
+          'delivery_fee':$('#delivery-fee').val(),
+          'discount':$('#product-discount').val(),
+          'warranty':$('#product-warranty').val(),
+          'store_id':'1',
+          '_token':$('input[name=_token]').val()
+        }).done(function(res) {
+          var tags = $('.tag-chips').material_chip('data');
+          var categories = $('.category-chips').material_chip('data');
+          for(var x in tags) {
+            $.post('http://localhost:8000/product-tags/create', {
+              'tag': tags[x].tag,
+              'product_id':res.product.id,
+              '_token':$('input[name=_token]').val()
+            }).done(function(res) {
+              console.log(res);
+            }).fail(function(err) {
+              console.log(err);
+            });
+          }/* tags post */
+          for(var x in categories) {
+            $.post('http://localhost:8000/product-category/create', {
+              'category':categories[x].tag,
+              'product_id':res.product.id,
+              '_token':$('input[name=_token]').val()
+            }).done(function(res) {
+              console.log(res);
+            }).fail(function(err) {
+              Materialize.toast("Failed");
+              console.log(err);
+            });
+          }/* category post */
+          console.log(res);
+          Materialize.toast(res.product.name + " added to products",2000)
+        }).fail(function(err) {
+          alert("Failed");
+          console.log(err);
+        });/* product post */
+      });/* product-form on submit */
+
+      $('#store-form').on('submit', function(e) {
+        e.preventDefault();
+        $.post('http://localhost:8000/store/create', {
+          'name':$("#name").val(),
+          'status':'pending',
+          'description':$('#description').val(),
+          'profile':'no_image.png',
+          'email':$('#email').val(),
+          'contact':$('#contact').val(),
+          'user_id':'{{ Auth::user()->id }}',
+          '_token':$('input[name=_token]').val()
+        }).done(function(res) {
+          Materialize.toast("Success",1000);
+          console.log(res);
+        }).fail(function(err) {
+          console.log(err);
+          alert("Failed");
+        });
+      });
+
+      $('#product-tags').on('submit', function(e) {
+        e.preventDefault();
+        $.post('http://localhost:8000/product-tags/create', {
+          'tag':$('#tag').val(),
+          'product_id':'1',
+          '_token':$('input[name=_token]').val()
+        }).done(function(res) {
+          alert("Done");
+          console.log(res);
+        }).fail(function(err) {
+          alert("Failed");
+          console.log(err);
+        });
+      });
+
+      $('#product-category').on('submit', function(e) {
+        e.preventDefault();
+        $.post('http://localhost:8000/product-category/create', {
+          'category':$('#category').val(),
+          'product_id':'1',
+          '_token':$('input[name=_token]').val()
+        }).done(function(res) {
+          console.log(res);
+          alert("Done")
+        }).fail(function(err) {
+          console.log(err);
+          alert("Failed");
+        });
+      });
+    });
+  </script>

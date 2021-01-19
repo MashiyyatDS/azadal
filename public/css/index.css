@@ -1,0 +1,165 @@
+html {
+	min-height: 100%;
+	position: relative;
+	font-family: Quicksand;
+}
+
+.header {
+	height: 500px;
+	background: linear-gradient(to bottom, #feccb1 0%,#d37e00 0%,#c12889 100%,#ff6060 100%);
+	position: relative;
+	margin-bottom: 20px;
+}
+.header:before {
+	content: '';
+  position: absolute;
+  bottom: 0;
+  height: 440px;
+  width: 100%;
+  background: url(../images/waves-cart.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.buttons {
+	padding: 20px;
+}
+.buttons button {
+	border-radius:20px;
+	margin:5px;
+}
+.buttons a {
+	border-radius:20px;
+	margin:5px;
+}
+.greets a {
+	border-radius:20px;
+	margin: 0px 50px;
+}
+.greet-title {
+	font-family: Quicksand;
+	font-size: 100px;
+	padding: 50px 0px 0px 50px;
+	color:white;
+	margin:0px;
+}
+.greet-content {
+	font-family: Quicksand;
+	font-size: 20px;
+	padding: 20px 50px;
+	color:white;
+	margin:0px;
+}
+.shop-now {
+	position: absolute;
+	margin: 0px 50px;
+}
+.header2 {
+	margin:100px 0px;
+  text-align: center;
+  position: relative;
+}
+.header2 p {
+	text-align: justify-all;
+}
+.header2 .row {
+	padding: 0px 50px;
+}
+.side-nav-cover {
+	height: 150px;
+	position: relative;
+	padding-top: 20px!important;
+	background: linear-gradient(to bottom, #feccb1 0%,#d37e00 0%,#c12889 100%,#ff6060 100%);
+}
+.side-nav-cover:before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  height: 30%;
+  width: 100%;
+  background: url(../images/bubles.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.shop-now-btn {
+	margin: 0px 15px 0px 15px!important;
+	border-radius:25px;
+  text-align: center;
+}
+footer {
+	margin-top: 50px;
+	position: absolute;
+  font-family: Quicksand;
+  width: 100%;
+  top: 100%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #feccb1 0%,#d37e00 0%,#c12889 100%,#ff6060 100%);
+  transition: .5s;
+}
+/*Media Queries*/
+@media (max-width: 575px) { 
+	.header:before {
+    height: 85px;
+    width: 100%;
+    background: url(../images/bubles.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+	}
+	.greet-title {
+		text-align: center;
+    padding: 50px 0px 0px 0px!important;
+    font-size: 70px;
+	}
+	.greet-content {
+		text-align: center;
+		font-size: 18px;
+	}
+	.buttons {
+		text-align: center!important;
+	}
+	.azadal-headers h3{
+		font-size: 25px!important;
+	}
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {  
+	.greet-title {
+    padding: 50px 0px 0px 50px!important;
+    font-size: 70px;
+	}
+	.greet-content {
+		text-align: center;
+		font-size: 18px;
+	}
+	.header:before {
+    height: 140px;
+    width: 100%;
+    background: url(../images/wave-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+	}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+	.greet-content {
+		text-align: center;
+		font-size: 18px;
+	}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {  
+	.greet-content {
+		text-align: center;
+		font-size: 19px;
+	}
+}
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  
+	/* Max */
+}

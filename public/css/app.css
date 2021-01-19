@@ -1,0 +1,52 @@
+body{ 
+font-family: Quicksand;
+}
+.body-container {
+  margin-left: 300px;   
+}
+.body-components-container {
+    padding: 10px;
+}
+.image-activator {
+    height: 50%;
+}
+.pagination li.active {
+  background-color: #d27c03!important;
+  width: 30px!important;
+  padding-top: 5px!important;
+  font-size: 15px!important;
+  color: white!important;
+}
+@media (max-width: 992px) { 
+    .body-container {
+      margin-left: 0px!important;   
+    }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #feccb1 0%,#d37e00 0%,#c12889 100%,#ff6060 100%);
+  transition: .5s;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #8bc34a!important;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #85c738!important;
+}
+.profile-nav {
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+.carousel .indicators .indicator-item {
+  background:gray!important;
+}
+.carousel .indicators .indicator-item.active {
+  background-color:#ff9800!important;
+}
+.carousel .indicators {
+  position: relative!important;
+  top: 85%!important;
+}
