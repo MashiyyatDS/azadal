@@ -12,7 +12,7 @@ class Store extends Model
 		];
 
 		protected $attributes = [
-			'status' => 'pending',
+			'status' => 'approved',
 			'profile' => 'noimage.png'
 		];
 
