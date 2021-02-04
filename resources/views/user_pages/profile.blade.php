@@ -3,11 +3,7 @@
 @section('sidenav_content')
 	<div class="row">
 		<div class="col s4 m3 l2 profile-row">
-			@if(Auth::user()->profile == 'no_image.png')
-			<img src="storage/images/user_profiles/no-image.jpg" width="100%" class="profile-photo responsive-img materialboxed">		
-			@else
-			<img src="storage/images/user_profiles/{{Auth::user()->id}}/{{Auth::user()->profile}}" width="100%" class="profile-photo responsive-img">	
-			@endif
+			<img src="storage/images/user_profiles/no-image.jpg" width="100%" class="profile-photo responsive-img materialboxed">	
 		</div>
 		<div class="col s8 m9 l10" id="user-details">
 			<p class="greet">Hello, {{ Auth::user()->name }} {{ Auth::user()->lastname }}</p>

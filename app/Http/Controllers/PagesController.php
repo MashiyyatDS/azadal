@@ -71,7 +71,7 @@ class PagesController extends Controller
 
     public function viewProduct($sid) {
       try {
-        $product = Product::find(Crypt::decryptString($sid));
+        $product = Product::findOrFail(Crypt::decryptString($sid));
         $discounted = $product->original_price - ($product->original_price * ($product->discount * .01));
         return view('user_pages.viewproduct')->with('product',$product)->with('discounted',$discounted);
       } catch (DecryptException $e) {

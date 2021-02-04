@@ -7,7 +7,7 @@
 		<div class="carousel">
 			@foreach($product->images()->get() as $image)
 	    	<a class="carousel-item">
-	    		<img src="/storage/images/product_images/{{$product->id}}/{{$image->image}}">
+	    		<img src="storage/images/product_images/{{$product->id}}/{{$image->image}}">
 	    	</a>
 			@endforeach
 	  </div>
